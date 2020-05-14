@@ -1,9 +1,11 @@
 import React from 'react';
+import {CardSubtitle} from 'reactstrap';
+
 
 export default function Date(props){
     return(
-        <p>
+        <CardSubtitle>
             Photo of the day on {props.date}
-        </p>
+        </CardSubtitle>
     )
 }

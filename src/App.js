@@ -4,6 +4,16 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import PhotoOfDay from './components/photoOfDay';
 import moment from 'moment';
+import styled from 'styled-components';
+
+const Button = styled.button`
+  padding: 15px;
+  background-color: red;
+  color: black;
+  height: auto;
+  width: 125px;
+  font-size: 24px
+`
 
 
 function App() {
@@ -19,7 +29,7 @@ const exampleData ={
 }
 
 const today = moment().format('YYYY-MM-DD');
-const [nasaDate, setNasaDate] = useState('2020-05-13');
+const [nasaDate, setNasaDate] = useState(today);
 const [nasaData, setNasaData] = useState(exampleData);
 const [counter, setCounter] = useState(0);
 
@@ -58,8 +68,8 @@ useEffect(()=>{
   return (
     <div className="App">
       <PhotoOfDay data={nasaData}/>
-      <button onClick ={()=>{dateHandler('previous')}}>Previous</button>
-      <button onClick={()=>{dateHandler('next')}}>Next</button>
+      <Button onClick ={()=>{dateHandler('previous')}}>Previous</Button>
+      <Button color='primary' size='large' onClick={()=>{dateHandler('next')}}>Next</Button>
     </div>
   );
 }

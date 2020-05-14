@@ -3,6 +3,8 @@ import Heading from './heading';
 import Photo from './photo';
 import Date from './date';
 import Explanation  from './explanation';
+import {Card} from 'reactstrap';
+
 
 
 export default function PhotoOfDay(props){
@@ -11,10 +13,10 @@ export default function PhotoOfDay(props){
 
 
     return(
-    <div className="container">
-        <Heading data={props.data.title} />
-        <Photo media={props.data.media_type} title={props.data.title} theUrl={props.data.url} theHDUrl ={props.data.hdurl}/>
-        <Date date={props.data.date}/>
-        <Explanation explanation={props.data.explanation}/>
-    </div>
-    )}
+<Card>
+    <Heading data={props.data.title} />
+    <Photo media={props.data.media_type} title={props.data.title} theUrl={props.data.url} theHDUrl ={props.data.hdurl}/>
+    <Date date={props.data.date}/>
+    <Explanation explanation={props.data.explanation}/>
+</Card>
+)}
